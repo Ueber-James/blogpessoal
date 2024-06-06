@@ -28,15 +28,15 @@ import jakarta.validation.Valid;
 @RequestMapping("/postagens")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
-	
+
 	@Autowired
 	private PostagemRepository postagemRepository;
 	
 	@Autowired
 	private TemaRepository temaRepository;
-	
+
 	@GetMapping
-	public ResponseEntity<List<Postagem>> getAll(){
+	public ResponseEntity<List<Postagem>> getAll() {
 		return ResponseEntity.ok(postagemRepository.findAll());
 	}
 
@@ -51,28 +51,27 @@ public class PostagemController {
 	public ResponseEntity<List<Postagem>> getByTitulo(@PathVariable String titulo){
 		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
 	}
-
+	
 	@PostMapping
-	public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem){
+	public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem) {
 		if (temaRepository.existsById(postagem.getTema().getId()))
 			return ResponseEntity.status(HttpStatus.CREATED)
-					.body(postagemRepository.save(postagem));
-			
+				.body(postagemRepository.save(postagem));
+		
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Tema não existe!", null);
 	}
 	
 	@PutMapping
-	public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem){
-		if (postagemRepository.existsById(postagem.getId())){
+	public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem) {
+		if (postagemRepository.existsById(postagem.getId())) {
 			
 			if (temaRepository.existsById(postagem.getTema().getId()))
 				return ResponseEntity.status(HttpStatus.OK)
 						.body(postagemRepository.save(postagem));
 			
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Tema não existe!", null);
-			
-		}			
-			
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Tema não existe!", null) ;
+		}
+		
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		
 	}
@@ -87,5 +86,6 @@ public class PostagemController {
 		
 		postagemRepository.deleteById(id);				
 	}
+	
 	
 }
