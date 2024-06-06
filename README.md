@@ -19,8 +19,6 @@ Este é um projeto de um blog pessoal desenvolvido com Java, Spring Boot, MySQL,
 1. Clone o repositório para a sua máquina local.
 2. Certifique-se de ter o Java, Node.js e MySQL instalados em sua máquina.
 3. Navegue até a pasta do projeto e execute `mvn spring-boot:run` para iniciar o servidor.
-4. Em outra janela do terminal, navegue até a pasta do cliente React e execute `npm start` para iniciar o cliente.
-5. Abra o navegador e acesse `http://localhost:3000` para ver o blog em ação.
 
 ## 🤝 Contribuições
 
