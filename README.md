@@ -17,7 +17,7 @@ Este é um projeto de um blog pessoal desenvolvido com Java, Spring Boot, MySQL,
 
 1. Clone o repositório para a sua máquina local.
 2. Certifique-se de ter o Java, Node.js e MySQL instalados em sua máquina.
-3. Navegue até a pasta do projeto e execute `mvn spring-boot:run` para iniciar o servidor.
+3. Navegue até a pasta do projeto e execute para iniciar o servidor.
 
 ##  Contribuições
 
