@@ -2,7 +2,7 @@
 
 ##  Descrição
 
-Este é um projeto de um blog pessoal desenvolvido com Java, Spring Boot, MySQL, JPA, Hibernate, Spring Security, arquitetura MVC e React. O projeto está atualmente em desenvolvimento e foi iniciado durante o bootcamp da Generation Brasil.
+Este é um projeto de um blog pessoal desenvolvido com Java, Spring Boot, MySQL, JPA,  Spring Security. 
 
 ##  Tecnologias Utilizadas
 
