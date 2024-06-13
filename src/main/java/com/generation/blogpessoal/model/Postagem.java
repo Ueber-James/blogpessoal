@@ -35,7 +35,7 @@ public class Postagem {
 	private LocalDateTime data;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("postagem") // ignorando as postagens na lista de tema para nao dar um looping infinito
+	@JsonIgnoreProperties("postagem") 
 	private Tema tema;
 	
 	@ManyToOne
